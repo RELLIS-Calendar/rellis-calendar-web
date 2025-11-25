@@ -1,0 +1,5 @@
+.Settings-container { 
+  text-align: center; 
+  padding: 50px; 
+  background-color: var(--bg-color); 
+  color: var(--text-color); }

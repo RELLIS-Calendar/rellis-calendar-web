@@ -1,0 +1,37 @@
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* <-- pushes logo left, links right */
+  background: var(--nav-bg);
+  padding: 8px 30px;
+  transition: background-color 0.25s ease;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icon {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+
+
+* {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
