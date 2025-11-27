@@ -1,5 +1,5 @@
 .Home-container { 
   text-align: center; 
-  padding: 50px; 
+  padding: 0; 
   background-color: var(--bg-color); 
   color: var(--text-color); }

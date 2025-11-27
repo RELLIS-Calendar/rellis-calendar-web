@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
-import Home from "./pages/Home";
-import Currentrsvp from "./pages/Currentrsvp";
-import Settings from "./pages/Settings";
-import Eventhosting from "./pages/Eventhosting";
-import Calendar from "./pages/Calendar";
-import Profile from "./pages/Profile";
+import Home from "./pages/Home/Home";
+import Currentrsvp from "./pages/Currentrsvp/Currentrsvp";
+import Settings from "./pages/Settings/Settings";
+import Eventhosting from "./pages/Eventhosting/Eventhosting";
+import Calendar from "./pages/Calendar/Calendar";
+import Profile from "./pages/Profile/Profile";
 import './App.css'
 
 
