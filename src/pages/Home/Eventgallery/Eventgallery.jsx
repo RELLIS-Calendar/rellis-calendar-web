@@ -6,8 +6,8 @@ import { events } from "../../../data/events";
 function Eventgallery({ searchText }) {
   const normalized = searchText.toLowerCase().trim();
 
-  //this is from chatgpt, did not know how to do on my own.
-
+  //this is the searchbar functionalty
+  
   let visibleEvents;
 
   if (normalized) {
@@ -28,6 +28,8 @@ function Eventgallery({ searchText }) {
 
   const galleryClass =
     visibleEvents.length === 1 ? "event-gallery single" : "event-gallery";
+
+  //gallery body
 
   return (
     <div className={galleryClass}>

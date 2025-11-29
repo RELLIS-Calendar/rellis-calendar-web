@@ -29,6 +29,7 @@ body {
   height: 40px;
   width: 40px;
   object-fit: contain;
+  user-select: none;
 }
 
 

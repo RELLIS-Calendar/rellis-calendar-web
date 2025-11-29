@@ -1,38 +1,78 @@
-import './Carousel.css';
-import react, { useEffect, useState } from "react";
+import "./Carousel.css";
+import React, { useState, useEffect } from "react";
+import { events } from "../../../data/events";
+import {
+  BsArrowLeftCircleFill,
+  BsArrowRightCircleFill,
+} from "react-icons/bs";
+import { Link } from "react-router-dom";
 
+    
 const Carousel = () => {
+  const [slide, setSlide] = useState(0);
+  const data = events.filter(events => events.featured); 
 
-    const data = ["(Slide with picture and event name)", "2", "3", "4"]
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const carouselInfiniteScroll = () => {
-        if (currentIndex === data.length - 1) {
-            return setCurrentIndex(0)
-        }
+useEffect(() => {
+        const interval = setInterval(() => { setSlide(prev =>
+            prev === data.length -1 ? 0 : prev + 1 ); }, 5000);        //this is our slide interval variable, 1000 = 1sec
+        
+        return () => clearInterval(interval);}, [slide, data.length]);      
+    
 
-        return setCurrentIndex(currentIndex + 1)
-    }
+  const nextSlide = () => {
+    setSlide(slide === data.length - 1 ? 0 : slide + 1);
+  };
 
-    useEffect(() => {
-        const interval = setInterval(() => { carouselInfiniteScroll() }, 3000)
-        return () => clearInterval(interval)
-    })
+  const prevSlide = () => {
+    setSlide(slide === 0 ? data.length - 1 : slide - 1);
+  };
 
-    return (
-        <div className='carousel-container'>
-            {data.map((item, index) => {
-                return <h1 className='carousel-item'
-                    style={{ transform: `translate(-${currentIndex * 100}%)` }}
-                    key={index}>{item}</h1>
-            })
+  return (
+    <div className="carousel">
+
+      <div className="arrow arrow-left" onClick={prevSlide}>
+        <BsArrowLeftCircleFill className="arrow-icon" />
+      </div>
+
+      {data.map((item, idx) => (
+      <Link to={'/Calendar'} className={slide === idx ? "cardOverlay" : "slide slide-hidden"} key={idx}>
+        <h1 className ="title">{item.title}</h1>
+        </Link>
+      ))}
+
+      {data.map((item, idx) => (
+          <Link
+              to="/Calendar"
+              key={idx}
+              className={slide === idx ? "slide" : "slide slide-hidden"}
+          >
+              <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="slide-image"
+              />
+          </Link>
+
+        
+      ))}
+
+      <div className="arrow arrow-right" onClick={nextSlide}>
+        <BsArrowRightCircleFill className="arrow-icon" />
+      </div>
+
+      <span className="indicators">
+        {data.map((_, idx) => (
+          <button
+            key={idx}
+            className={
+              slide === idx ? "indicator" : "indicator indicator-inactive"
             }
-        </div>
-    )
-}
-
-
-// https://codesandbox.io/p/sandbox/react-carousel-3d-9x3wt?file=%2Fsrc%2FSlider.js%3A16%2C33
-// https://stackoverflow.com/questions/62564490/how-to-make-cards-slide-in-react-using-buttons
-
+            onClick={() => setSlide(idx)}
+          ></button>
+        ))}
+      </span>
+    </div>
+  );
+};
 
 export default Carousel;
