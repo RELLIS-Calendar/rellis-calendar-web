@@ -17,9 +17,9 @@ function Navbar() {
       
       <div className="nav-links">
         <a href="/Calendar"><img src={calendar} alt="calendar" className="nav-icon" /></a>
-        <a href="/Currentrsvp"><img src={star} alt="star" className="nav-icon" /></a>
+        {/* <a href="/Currentrsvp"><img src={star} alt="star" className="nav-icon" /></a>
         <a href="/Eventhosting"><img src={group} alt="group" className="nav-icon" /></a>
-        <a href="/Profile"><img src={profile} alt="profile" className="nav-icon" /></a>
+        <a href="/Profile"><img src={profile} alt="profile" className="nav-icon" /></a> */}
         {/* <a href="/settings"><img src={settings} alt="settings" className="nav-icon" /></a> */}
 
       </div>
