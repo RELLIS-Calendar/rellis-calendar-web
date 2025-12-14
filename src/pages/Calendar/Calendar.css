@@ -1,0 +1,147 @@
+body {
+    margin: 10;
+    padding: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    height: 100vh;
+    
+    font-family: Arial, sans-serif;
+}
+
+.calendar-container {
+    width: 95vw;
+    height: 80vh;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background: var(--bg-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header button {
+    background-color: #9b1a1a;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+.calendar-header button:hover {
+    background-color: #8d2121;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.calendar-day {
+    border: 1px solid #eee;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    aspect-ratio: 1 / 1;
+}
+
+.calendar-day:hover {
+    background-color: #202020;
+}
+
+.today {
+    background-color: #9b1a1a;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.event-dot {
+    width: 6px;
+    height: 6px;
+    background: #9b1a1a;
+    border-radius: 50%;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-box {
+    background: rgb(31, 31, 31);
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.event-box input, 
+.event-box textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.event-item {
+    background: rgb(24, 24, 24);
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+
+.delete-button {
+    margin-top: 6px;
+    padding: 6px 10px;
+    background: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background: #e14b4b;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
