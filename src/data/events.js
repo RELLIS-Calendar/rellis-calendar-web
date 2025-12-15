@@ -17,7 +17,7 @@ export const events = [
     title: "Turkey Trot",
     imageUrl: goblin2,
     featured: true,
-    tags: ["Exersize","Free"],
+    tags: ["Exercise","Free"],
     
   },
   {
