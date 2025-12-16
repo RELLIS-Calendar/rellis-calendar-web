@@ -1,0 +1,15 @@
+[
+  {
+    "source": "/api/<*>",
+    "target": "https://YOUR-EB-URL.elasticbeanstalk.com/<*>",
+    "status": "200",
+    "condition": null
+  },
+  {
+    "source": "/<*>",
+    "target": "/index.html",
+    "status": "200",
+    "condition": null
+  }
+]
+
