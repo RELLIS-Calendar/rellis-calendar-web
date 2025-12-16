@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_URL || window.__API_BASE__ || 'https://p4o6wzh11c.execute-api.us-east-2.amazonaws.com/prod';
+const API_BASE = import.meta.env.VITE_API_URL || '';
 
 if (API_BASE) {
   const originalFetch = window.fetch.bind(window);
