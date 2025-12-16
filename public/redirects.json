@@ -1,7 +1,7 @@
 [
   {
     "source": "/api/<*>",
-    "target": "https://YOUR-EB-URL.elasticbeanstalk.com/<*>",
+    "target": "rellis-calendar-api-env.eba-b5gm3tfj.us-east-2.elasticbeanstalk.com/<*>",
     "status": "200",
     "condition": null
   },
